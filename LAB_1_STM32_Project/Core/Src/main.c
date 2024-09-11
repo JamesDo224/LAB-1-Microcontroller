@@ -291,10 +291,20 @@ int main(void)
   	  HAL_GPIO_WritePin(F_GPIO_Port, F_Pin, SET);
   	  HAL_GPIO_WritePin(G_GPIO_Port, G_Pin, SET);
   }
+  void LED_set()
+  {
+	  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
+	  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
+	  HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, SET);
+	  HAL_GPIO_WritePin(LED_RED2_GPIO_Port, LED_RED2_Pin, SET);
+	  HAL_GPIO_WritePin(LED_YELLOW2_GPIO_Port, LED_YELLOW2_Pin, SET);
+	  HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, SET);
+  }
   int signl_X = 3;
   int signl_Y = 1;
   int counter_X = 3;
   int counter_Y = 5;
+  LED_set();
   display7SEG_set();
   while (1)
   {
