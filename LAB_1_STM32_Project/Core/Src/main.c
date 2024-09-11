@@ -94,6 +94,15 @@ int main(void)
   void display7SEG(int num)
   {
 	  switch(num){
+	  case 0:
+	   	  HAL_GPIO_WritePin(A_GPIO_Port, A_Pin, RESET);
+	   	  HAL_GPIO_WritePin(B_GPIO_Port, B_Pin, RESET);
+	   	  HAL_GPIO_WritePin(C_GPIO_Port, C_Pin, RESET);
+	   	  HAL_GPIO_WritePin(D_GPIO_Port, D_Pin, RESET);
+	   	  HAL_GPIO_WritePin(E_GPIO_Port, E_Pin, RESET);
+	   	  HAL_GPIO_WritePin(F_GPIO_Port, F_Pin, RESET);
+	   	  HAL_GPIO_WritePin(G_GPIO_Port, G_Pin, SET);
+	   	  break;
 	  case 1:
 		  HAL_GPIO_WritePin(A_GPIO_Port, A_Pin, SET);
 		  HAL_GPIO_WritePin(B_GPIO_Port, B_Pin, RESET);
@@ -121,7 +130,7 @@ int main(void)
 	  	  HAL_GPIO_WritePin(F_GPIO_Port, F_Pin, SET);
 	  	  HAL_GPIO_WritePin(G_GPIO_Port, G_Pin, RESET);
 	  	  break;
-   case 4:
+	  case 4:
 	  	  HAL_GPIO_WritePin(A_GPIO_Port, A_Pin, SET);
 	  	  HAL_GPIO_WritePin(B_GPIO_Port, B_Pin, RESET);
 	   	  HAL_GPIO_WritePin(C_GPIO_Port, C_Pin, RESET);
@@ -180,6 +189,15 @@ int main(void)
   void display7SEG_2(int num)
   {
   	  switch(num){
+  	  case 0:
+  		  HAL_GPIO_WritePin(A2_GPIO_Port, A2_Pin, RESET);
+  		  HAL_GPIO_WritePin(B2_GPIO_Port, B2_Pin, RESET);
+  		  HAL_GPIO_WritePin(C2_GPIO_Port, C2_Pin, RESET);
+  		  HAL_GPIO_WritePin(D2_GPIO_Port, D2_Pin, RESET);
+  		  HAL_GPIO_WritePin(E2_GPIO_Port, E2_Pin, RESET);
+  		  HAL_GPIO_WritePin(F2_GPIO_Port, F2_Pin, RESET);
+  		  HAL_GPIO_WritePin(G2_GPIO_Port, G2_Pin, SET);
+  	   	  break;
   	  case 1:
   		  HAL_GPIO_WritePin(A2_GPIO_Port, A2_Pin, SET);
   		  HAL_GPIO_WritePin(B2_GPIO_Port, B2_Pin, RESET);
@@ -207,14 +225,14 @@ int main(void)
   		  HAL_GPIO_WritePin(F2_GPIO_Port, F2_Pin, SET);
   		  HAL_GPIO_WritePin(G2_GPIO_Port, G2_Pin, RESET);
   	  	  break;
-       case 4:
- 		   	  HAL_GPIO_WritePin(A2_GPIO_Port, A2_Pin, SET);
- 		 	  HAL_GPIO_WritePin(B2_GPIO_Port, B2_Pin, RESET);
- 			  HAL_GPIO_WritePin(C2_GPIO_Port, C2_Pin, RESET);
- 		 	  HAL_GPIO_WritePin(D2_GPIO_Port, D2_Pin, SET);
- 			  HAL_GPIO_WritePin(E2_GPIO_Port, E2_Pin, SET);
- 		 	  HAL_GPIO_WritePin(F2_GPIO_Port, F2_Pin, RESET);
- 		 	  HAL_GPIO_WritePin(G2_GPIO_Port, G2_Pin, RESET);
+      case 4:
+ 		  HAL_GPIO_WritePin(A2_GPIO_Port, A2_Pin, SET);
+ 		  HAL_GPIO_WritePin(B2_GPIO_Port, B2_Pin, RESET);
+ 		  HAL_GPIO_WritePin(C2_GPIO_Port, C2_Pin, RESET);
+ 		  HAL_GPIO_WritePin(D2_GPIO_Port, D2_Pin, SET);
+ 		  HAL_GPIO_WritePin(E2_GPIO_Port, E2_Pin, SET);
+ 		  HAL_GPIO_WritePin(F2_GPIO_Port, F2_Pin, RESET);
+ 		  HAL_GPIO_WritePin(G2_GPIO_Port, G2_Pin, RESET);
   	   	  break;
   	  case 5:
   		  HAL_GPIO_WritePin(A2_GPIO_Port, A2_Pin, RESET);
@@ -287,7 +305,7 @@ int main(void)
 		  display7SEG_2(counter_X--);
 		  HAL_GPIO_WritePin(LED_YELLOW2_GPIO_Port, LED_YELLOW2_Pin, SET);
 		  HAL_GPIO_WritePin(LED_RED2_GPIO_Port, LED_RED2_Pin, RESET);
-		  if(counter_X < 1)
+		  if(counter_X < 0)
 		  {
 			  counter_X = 3;
 			  signl_X = 3;
@@ -297,7 +315,7 @@ int main(void)
 		  display7SEG_2(counter_X--);
 		  HAL_GPIO_WritePin(LED_GREEN2_GPIO_Port, LED_GREEN2_Pin, SET);
 		  HAL_GPIO_WritePin(LED_YELLOW2_GPIO_Port, LED_YELLOW2_Pin, RESET);
-		  if(counter_X < 1)
+		  if(counter_X < 0)
 		  {
 			  counter_X = 5;
 			  signl_X = 1;
@@ -307,7 +325,7 @@ int main(void)
 		  display7SEG_2(counter_X--);
 		  HAL_GPIO_WritePin(LED_RED2_GPIO_Port, LED_RED2_Pin, SET);
 		  HAL_GPIO_WritePin(LED_GREEN2_GPIO_Port, LED_GREEN2_Pin, RESET);
-		  if(counter_X < 1)
+		  if(counter_X < 0)
 		  {
 			  counter_X = 2;
 			  signl_X = 2;
@@ -321,7 +339,7 @@ int main(void)
 		  display7SEG(counter_Y--);
 		  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
 		  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET);
-		  if(counter_Y < 1)
+		  if(counter_Y < 0)
 		  {
 			  counter_Y = 3;
 			  signl_Y = 3;
@@ -331,7 +349,7 @@ int main(void)
 		  display7SEG(counter_Y--);
 		  HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, SET);
 		  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, RESET);
-		  if(counter_Y < 1)
+		  if(counter_Y < 0)
 		  {
 			  counter_Y = 5;
 			  signl_Y = 1;
@@ -341,7 +359,7 @@ int main(void)
 	  	 display7SEG(counter_Y--);
     	 HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
 	  	 HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, RESET);
-	     if(counter_Y < 1)
+	     if(counter_Y < 0)
 	     {
 	  	      counter_Y = 2;
 	  		  signl_Y = 2;
