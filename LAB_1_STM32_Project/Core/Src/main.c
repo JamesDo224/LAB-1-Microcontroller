@@ -96,12 +96,12 @@ int main(void)
   {
     /* USER CODE END WHILE */
 	 if(counter == 0){
-		 HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET);
-		 HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
+		 HAL_GPIO_WritePin(LED_RED_Blinky_GPIO_Port, LED_RED_Blinky_Pin, RESET);
+		 HAL_GPIO_WritePin(LED_YELLOW_Blinky_GPIO_Port, LED_YELLOW_Blinky_Pin, SET);
 	 }
 	 if(counter == 1){
-		 HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
-		 HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, RESET);
+		 HAL_GPIO_WritePin(LED_RED_Blinky_GPIO_Port, LED_RED_Blinky_Pin, SET);
+		 HAL_GPIO_WritePin(LED_YELLOW_Blinky_GPIO_Port, LED_YELLOW_Blinky_Pin, RESET);
 	 }
 	 counter = !counter;
 	 HAL_Delay(2000);
